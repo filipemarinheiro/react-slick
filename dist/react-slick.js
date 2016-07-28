@@ -300,6 +300,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      lazyLoad: this.props.lazyLoad,
 	      lazyLoadedList: this.state.lazyLoadedList,
 	      rtl: this.props.rtl,
+	      customTrackLeft: this.props.customTrackLeft,
 	      slideWidth: this.state.slideWidth,
 	      slidesToShow: this.props.slidesToShow,
 	      slideCount: this.state.slideCount,
@@ -628,6 +629,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (spec.fade) {
 	    return 0;
+	  }
+
+	  if (spec.customTrackLeft) {
+	    return spec.customTrackLeft(spec.slideIndex, spec.slideWidth);
 	  }
 
 	  if (spec.infinite) {

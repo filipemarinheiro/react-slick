@@ -27,6 +27,7 @@ var defaultProps = {
     speed: 500,
     swipe: true,
     swipeToSlide: false,
+    canSwipe: null,
     touchMove: true,
     touchThreshold: 5,
     useCSS: true,

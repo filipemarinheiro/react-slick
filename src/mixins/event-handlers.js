@@ -44,6 +44,9 @@ var EventHandlers = {
 
   },
   swipeStart: function (e) {
+    if (this.props.canSwipe && !this.props.canSwipe(e)) {
+        return;
+    }
     var touches, posX, posY;
 
     if ((this.props.swipe === false) || ('ontouchend' in document && this.props.swipe === false)) {
